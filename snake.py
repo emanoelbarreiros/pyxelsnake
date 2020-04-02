@@ -2,13 +2,15 @@ import pyxel
 
 class Game:
     def __init__(self):
-        pyxel.init(100, 100)
+        pyxel.init(120, 100)
+        self.x = 0
         pyxel.run(self.update, self.draw)
 
     def update(self):
-        pass
+        self.x = (self.x + 1) % pyxel.width
 
     def draw(self):
-        pass
+        pyxel.cls(0)
+        pyxel.rect(self.x, 20, 5, 10, 9)
 
 Game()
